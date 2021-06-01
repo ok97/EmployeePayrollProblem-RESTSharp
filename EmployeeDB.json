@@ -11,9 +11,9 @@
       "Salary": "150000"
     },
     {
-      "id": "3",
-      "Name": "Raja",
-      "Salary": "3000"
+      "name": "Radha",
+      "salary": "65000",
+      "id": "3"
     },
     {
       "id": "4",
