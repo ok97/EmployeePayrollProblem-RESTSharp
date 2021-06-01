@@ -26,11 +26,6 @@
       "Salary": "10000"
     },
     {
-      "name": "Jimmy",
-      "salary": "150000",
-      "id": "9"
-    },
-    {
       "Id": 0,
       "Name": null,
       "Salary": null,

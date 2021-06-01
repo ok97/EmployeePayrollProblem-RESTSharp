@@ -144,6 +144,27 @@ namespace EmployeePayrollProblem_RESTSharp
             Assert.AreEqual("65000", employee.Salary);
             Console.WriteLine(response.Content);
         }
+
+
+        /*UC5:- Ability to Delete Employee from Employee Payroll JSON Server.
+                - Use JSON Server and RESTSharp to then delete the employee by ID.
+                - Delete the Employee from the Memory.
+        */
+
+        [TestMethod]
+        public void OnCallingDeleteAPI_ReturnSuccessStatus()
+        {
+            //Arrange
+            //Initialize the request for PUT to add new employee
+            RestRequest request = new RestRequest("/Employees/9", Method.DELETE);
+
+            //Act
+            IRestResponse response = client.Execute(request);
+
+            //Assert
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            Console.WriteLine(response.Content);
+        }
     }
 }
 
