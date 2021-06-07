@@ -83,6 +83,42 @@ namespace EmployeePayrollProblem_RESTSharp
             Console.WriteLine(response.Content);
         }
 
+        /*UC3:- Ability to add multiple Employee to  the EmployeePayroll JSON Server.
+                - Use JSON Server and RESTSharp to add  multiple Employees to Payroll
+                - Ability to add using RESTSharp to  JSONServer in the MSTest Test Case and  then on success add to  EmployeePayrollService
+                - Validate with the successful Count
+        */
+        
+        [TestMethod]
+        public void OnCallingPostAPIForAEmployeeListWithMultipleEMployees_ReturnEmployeeObject()
+        {
+            // Arrange
+            List<EmployeeModel> employeeList = new List<EmployeeModel>();
+            employeeList.Add(new EmployeeModel { Name = "Sham", Salary = "9876541" });
+            employeeList.Add(new EmployeeModel { Name = "Ramrao", Salary = "6543210" });
+            employeeList.Add(new EmployeeModel { Name = "Meera", Salary = "123456" });
+            // Iterate the loop for each employee
+            foreach (var emp in employeeList)
+            {
+                // Initialize the request for POST to add new employee
+                RestRequest request = new RestRequest("/Employees", Method.POST);
+                JsonObject jsonObj = new JsonObject();
+                jsonObj.Add("Name", emp.Name);
+                jsonObj.Add("Salary", emp.Salary);
+                // Added parameters to the request object such as the content-type and attaching the jsonObj with the request
+                request.AddParameter("application/json", jsonObj, ParameterType.RequestBody);
+
+                //Act
+                IRestResponse response = client.Execute(request);
+
+                //Assert
+                Assert.AreEqual(HttpStatusCode.Created, response.StatusCode);
+                EmployeeModel employee = JsonConvert.DeserializeObject<EmployeeModel>(response.Content);
+                Assert.AreEqual(emp.Name, employee.Name);
+                Assert.AreEqual(emp.Salary, employee.Salary);
+                Console.WriteLine(response.Content);
+            }
+        }
         
     }
 }
