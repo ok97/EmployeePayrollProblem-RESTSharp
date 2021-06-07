@@ -43,7 +43,7 @@ namespace EmployeePayrollProblem_RESTSharp
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             // Convert the response object to list of employees
             List<EmployeeModel> employeeList = JsonConvert.DeserializeObject<List<EmployeeModel>>(response.Content);
-            Assert.AreEqual(5, employeeList.Count);
+            Assert.AreEqual(2, employeeList.Count);
             foreach (EmployeeModel emp in employeeList)
             {
                 Console.WriteLine("Id:- " + emp.Id + "\t" + "Name:- " + emp.Name + "\t" + "Salary:- " + emp.Salary);

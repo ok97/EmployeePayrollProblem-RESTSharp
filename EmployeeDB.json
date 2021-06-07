@@ -1,50 +1,14 @@
 {
   "Employees": [
     {
-      "id": "1",
+      "id": 1,
       "Name": "Omprakash",
       "Salary": "50000"
     },
     {
-      "id": "2",
+      "id": 2,
       "Name": "Om",
       "Salary": "150000"
-    },
-    {
-      "name": "Radha",
-      "salary": "65000",
-      "id": "3"
-    },
-    {
-      "id": "4",
-      "Name": "Ekta",
-      "Salary": "7500"
-    },
-    {
-      "id": "5",
-      "Name": "Ram",
-      "Salary": "10000"
-    },
-    {
-      "Id": 0,
-      "Name": null,
-      "Salary": null,
-      "id": "DiBhk0B"
-    },
-    {
-      "name": "Sham",
-      "salary": "9876541",
-      "id": "UKOGNuK"
-    },
-    {
-      "name": "Sham",
-      "salary": "9876541",
-      "id": "XYoJ7gG"
-    },
-    {
-      "name": "Sham",
-      "salary": "9876541",
-      "id": "nDt5SIE"
     }
   ]
 }
